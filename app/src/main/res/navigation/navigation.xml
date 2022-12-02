@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment2"
+    tools:layout="@layout/fragment_home">
+
+    <action
+        android:id="@+id/action_homeFragment2_to_detalhesFragment"
+        app:destination="@id/detalhesFragment" />
+    <action
+        android:id="@+id/action_homeFragment2_to_alteraFragment"
+        app:destination="@id/alteraFragment" />
+    <fragment
+        android:id="@+id/cadastraFragment2"
+        android:name="com.lucasapps.segundaprova.fragments.cadastra.CadastraFragment"
+        android:label="Cadastro" >
+        <action
+            android:id="@+id/action_cadastraFragment2_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.lucasapps.segundaprova.fragments.home.HomeFragment"
+        android:label="Filmes" >
+        <action
+            android:id="@+id/action_homeFragment2_to_alteraFragment"
+            app:destination="@id/alteraFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_detalhesFragment"
+            app:destination="@id/detalhesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alteraFragment"
+        android:name="com.lucasapps.segundaprova.fragments.altera.AlteraFragment"
+        android:label="Alterar" >
+        <action
+            android:id="@+id/action_alteraFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalhesFragment"
+        android:name="com.lucasapps.segundaprova.fragments.detalhes.DetalhesFragment"
+        android:label="Detalhes" />
+
+    <fragment
+        android:id="@+id/sobreFragment"
+        android:name="com.lucasapps.segundaprova.fragments.sobre.SobreFragment"
+        android:label="Sobre" />
+</navigation>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.lucasapps.segundaprova.fragments.cadastra.CadastraViewModel" />
+        <import type="com.lucasapps.segundaprova.converters.DataBindingConverters"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cadastra"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.home.cadastro.CadastraFragment">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="198dp"
+            android:layout_height="92dp"
+            android:text="Cadastro de Filmes"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#AF1F1F"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.244"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.128" />
+
+        <EditText
+            android:id="@+id/editTextTitulo"
+            android:layout_width="298dp"
+            android:layout_height="54dp"
+            android:ems="10"
+            android:hint="Título"
+            android:inputType="textPersonName"
+            android:text="@={viewmodel.filmes.titulo}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.047"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/editTextGenero"
+            android:layout_width="298dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Gênero"
+            android:inputType="textPersonName"
+            android:text="@={viewmodel.filmes.genero}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTitulo"
+            app:layout_constraintVertical_bias="0.073"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/editTextDiretor"
+            android:layout_width="298dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Diretor"
+            android:inputType="textPersonName"
+            android:text="@={viewmodel.filmes.diretor}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/editTextGenero"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextGenero"
+            app:layout_constraintTop_toBottomOf="@+id/editTextGenero"
+            app:layout_constraintVertical_bias="0.106"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck,DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck,DuplicateClickableBoundsCheck" />
+
+        <EditText
+            android:id="@+id/editTextAno"
+            android:layout_width="298dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ano de Lançamento"
+            android:inputType="numberDecimal"
+            android:text="@={DataBindingConverters.convertIntToString(viewmodel.filmes.ano)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/editTextDiretor"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextDiretor"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDiretor"
+            app:layout_constraintVertical_bias="0.13"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/editTextDuracao"
+            android:layout_width="298dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="duração do filme ( minutos)"
+            android:inputType="numberDecimal"
+            android:text="@={DataBindingConverters.convertIntToString(viewmodel.filmes.duracao_min)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/editTextDiretor"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextDiretor"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDiretor"
+            app:layout_constraintVertical_bias="0.447"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/buttonCadastra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAno"
+            app:layout_constraintVertical_bias="0.712" />
+
+        <!--<ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="94dp"
+            android:layout_height="98dp"
+            android:rotation="0"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTitulo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.769"
+            app:srcCompat="@drawable/pipoca" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
