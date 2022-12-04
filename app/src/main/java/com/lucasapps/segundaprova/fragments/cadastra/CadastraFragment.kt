@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.lucasapps.segundaprova.R
 import com.lucasapps.segundaprova.databinding.FragmentCadastraBinding
+import com.lucasapps.segundaprova.model.Filmes
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,10 +29,10 @@ class CadastraFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.buttonCadastra.setOnClickListener{
-
-            viewModel.cadastrarButtonEvent()
-            Navigation.findNavController(it).navigate(R.id.action_cadastraFragment2_to_homeFragment2)
-            Toast.makeText(requireContext(), " Filme cadastrado!", Toast.LENGTH_SHORT).show()
+          viewModel.cadastrarButtonEvent()
+                Navigation.findNavController(it)
+                    .navigate(R.id.action_cadastraFragment2_to_homeFragment2)
+                Toast.makeText(requireContext(), " Filme cadastrado!", Toast.LENGTH_SHORT).show()
         }
         // Inflate the layout for this fragment
         return binding.root
