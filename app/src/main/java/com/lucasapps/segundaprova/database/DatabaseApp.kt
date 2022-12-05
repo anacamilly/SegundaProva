@@ -7,9 +7,8 @@ import androidx.room.RoomDatabase
 import com.lucasapps.segundaprova.dao.FilmesDao
 import com.lucasapps.segundaprova.model.Filmes
 
-
 @Database(entities = [Filmes::class], version = 1, exportSchema = false)
- abstract class DatabaseApp : RoomDatabase() {
+abstract class DatabaseApp : RoomDatabase() {
  abstract fun FilmesDao(): FilmesDao
 
  companion object {
